@@ -1,0 +1,31 @@
+:root { --bg: #faf9f5; --ink: #1f1e1d; --muted: #73716b; --line: #e6e3da; --accent: #c15f3c; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+main.narrow { max-width: 380px; padding-top: 12vh; }
+h1, h2, .result { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+h1 { font-size: 2rem; margin: 0 0 4px; }
+h2 { font-size: 1.15rem; margin: 40px 0 8px; }
+header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 28px; }
+.muted { color: var(--muted); } .small { font-size: .85rem; }
+.error { color: #b3261e; margin: 8px 0; }
+form { display: flex; flex-direction: column; gap: 10px; }
+input, textarea { font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); resize: vertical; }
+input:focus, textarea:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 10px; padding: 10px 16px; background: var(--ink); color: #fff; }
+button:disabled { opacity: .45; cursor: default; }
+button.link { background: none; color: var(--muted); padding: 0; text-decoration: underline; text-align: left; }
+.ask { flex-direction: row; align-items: flex-end; } .ask textarea { flex: 1; }
+.result { font-size: 1.9rem; margin: 28px 0 16px; }
+.kmap { border-collapse: separate; border-spacing: 6px; margin: 0 0 8px; }
+.kmap th { font-weight: 500; color: var(--muted); font-size: .85rem; padding: 4px 8px; }
+.kmap td { width: 68px; height: 68px; text-align: center; vertical-align: middle; background: #fff; border: 1px solid var(--line); border-radius: 10px; font-size: 1.3rem; position: relative; }
+.kmap td small { position: absolute; right: 6px; bottom: 3px; font-size: .62rem; color: var(--muted); }
+.kmap td.zero { color: #b9b6ad; } .kmap td.dc { color: var(--muted); font-style: italic; }
+.groups { list-style: none; padding: 0; margin: 16px 0; }
+.groups li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 10px; cursor: pointer; }
+.groups li:hover, .groups li.on { background: #f0eee6; }
+.groups i { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.explain { white-space: pre-wrap; border-left: 2px solid var(--line); padding-left: 16px; margin: 20px 0; max-width: 62ch; }
+.history { list-style: none; padding: 0; margin: 0; } .history li { padding: 4px 0; }
+@media (max-width: 480px) { .kmap td { width: 54px; height: 54px; } .ask { flex-direction: column; align-items: stretch; } }
